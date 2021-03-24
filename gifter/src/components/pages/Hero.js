@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Jumbotron, Button, Container, Row, InputGroup, FormControl, Card, ListGroup, ListGroupItem} from 'react-bootstrap'
+import { Jumbotron, Button, Container, Row, InputGroup, FormControl, Card, ListGroup, ListGroupItem, ToggleButtonGroup, ToggleButton} from 'react-bootstrap'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
 import { Link } from 'react-router-dom';
@@ -25,7 +25,7 @@ class Hero extends Component {
     let prods = [
                  {'id': 1, 
                  'name': 'Almofada te amo alien do universo',
-                 'price': 'R$ 169,90 | R$6x 28,31',
+                 'price': 'R$ 169,90',
                  'img': 'http://imaginarium.vteximg.com.br/arquivos/ids/8997247/Almofada-te-amo-alien-do-universo.jpg?v=637473931292530000',
                  'description': 'Se você costuma ter momentos "espaciais" com o mozão, acaba de encontrar o presente mais incrível do planeta (se não do universo)! A almofada perfeita pro seu contatinho (de terceiro grau), pra fazer a maior declaração do mundo: Te amo - alien do universo!',
                   'link': 'https://loja.imaginarium.com.br/almofada-te-amo-alien-do-universo/p'
@@ -38,8 +38,22 @@ class Hero extends Component {
                   'link': 'https://www.amazon.com.br/dp/B0797G13CS/ref=cm_gf_aAF_i10_d_p0_qd0_6s6vtuP6jhRSuOnEP9XQ'
                  },
                  {'id': 3, 
+                 'name': 'Placa De Música Acrílica',
+                 'price': 'R$ 58,41',
+                 'img': 'https://ik.imagekit.io/soufeel/en/media/catalog/product/cache/0/image/500x/9df78eab33525d08d6e5fb8d27136e95/C/B/CBS107_3_1.jpg',
+                 'description': 'Se você costuma ter momentos "espaciais" com o mozão, acaba de encontrar o presente mais incrível do planeta (se não do universo)! A almofada perfeita pro seu contatinho (de terceiro grau), pra fazer a maior declaração do mundo: Te amo - alien do universo!',
+                  'link': 'https://www.soufeeljoias.com.br/custom-scannable-spotify-code-music-plaque-gifts-for-family.html?utm_source=Google&utm_medium=br&utm_content=pla&utm_term=CBS110&gclid=Cj0KCQjw3duCBhCAARIsAJeFyPWVQxxfji_lagWljE8-p22unPD4pgOTIz4vJ9l1tXNZSmaxktMG5l4aAo9PEALw_wcB'
+                 },
+                 {'id': 4, 
                  'name': 'Placa De Música Acrílica Com Código Scannable Spotify Personalizado',
-                 'price': '58,41 R$ 63% OFF',
+                 'price': 'R$ 58,41',
+                 'img': 'https://ik.imagekit.io/soufeel/en/media/catalog/product/cache/0/image/500x/9df78eab33525d08d6e5fb8d27136e95/C/B/CBS107_3_1.jpg',
+                 'description': 'Se você costuma ter momentos "espaciais" com o mozão, acaba de encontrar o presente mais incrível do planeta (se não do universo)! A almofada perfeita pro seu contatinho (de terceiro grau), pra fazer a maior declaração do mundo: Te amo - alien do universo!',
+                  'link': 'https://www.soufeeljoias.com.br/custom-scannable-spotify-code-music-plaque-gifts-for-family.html?utm_source=Google&utm_medium=br&utm_content=pla&utm_term=CBS110&gclid=Cj0KCQjw3duCBhCAARIsAJeFyPWVQxxfji_lagWljE8-p22unPD4pgOTIz4vJ9l1tXNZSmaxktMG5l4aAo9PEALw_wcB'
+                 },
+                 {'id': 5, 
+                 'name': 'Placa De Música Acrílica Com Código Scannable Spotify Personalizado',
+                 'price': 'R$ 58,41',
                  'img': 'https://ik.imagekit.io/soufeel/en/media/catalog/product/cache/0/image/500x/9df78eab33525d08d6e5fb8d27136e95/C/B/CBS107_3_1.jpg',
                  'description': 'Se você costuma ter momentos "espaciais" com o mozão, acaba de encontrar o presente mais incrível do planeta (se não do universo)! A almofada perfeita pro seu contatinho (de terceiro grau), pra fazer a maior declaração do mundo: Te amo - alien do universo!',
                   'link': 'https://www.soufeeljoias.com.br/custom-scannable-spotify-code-music-plaque-gifts-for-family.html?utm_source=Google&utm_medium=br&utm_content=pla&utm_term=CBS110&gclid=Cj0KCQjw3duCBhCAARIsAJeFyPWVQxxfji_lagWljE8-p22unPD4pgOTIz4vJ9l1tXNZSmaxktMG5l4aAo9PEALw_wcB'
@@ -100,25 +114,44 @@ class Hero extends Component {
                 </button>
             </div> */}
 
-        <br/>
+        {/* <br/> */}
 
         <Row className="justify-content-md-center">
+            {/* <Button style={{marginRight: '15px'}} onClick={() => this.submitSearch()} >Namorado</Button>
+            <Button style={{marginLeft: '15px', background: '#FF1493', borderColor: '#FF1493'}} onClick={() => this.submitSearch()}>Namorada</Button> */}
+
+            <ToggleButtonGroup type="checkbox">
+              <ToggleButton style={{marginLeft: '30px', marginRight: '15px'}} onClick={() => this.submitSearch()} >Namorado</ToggleButton>
+            </ToggleButtonGroup>
+            <ToggleButtonGroup type="checkbox">
+              <ToggleButton style={{marginLeft: '15px', background: '#FF1493', borderColor: '#FF1493'}} onClick={() => this.submitSearch()}>Namorada</ToggleButton>
+            </ToggleButtonGroup>
+
+        </Row>
+
+        <Row className="justify-content-md-center">
+        {/* <Row class="flex">  */}
+
+        {/* <div class="flex col-lg-3 col-md-6 col-sm-12 col-xs-12"> */}
 
         {produtos.map(produto =>
         <a href={produto.link} style={{ textDecoration: 'none' }} target="_blank">
-          <Card style={{ width: '18rem', margin: '0.5rem' }} key={produto.id}>
-            <Card.Img variant="top" src={produto.img} />
+          <Card style={{ width: '10rem', margin: '0.5rem' }} key={produto.id}>
+          {/* <Card style={{ margin: '0.5rem' }} key={produto.id}> */}
+            <Card.Img variant="top" src={produto.img}  />
             <Card.Body>
-              <Card.Title style={{ color: '#222222'}}>{produto.name}</Card.Title>
+              <Card.Title style={{ color: '#222222', fontSize: '10px'}}>{produto.name}</Card.Title>
               <Card.Text>
                 {/* <span style={{ color: '#222222'}}>{produto.description}</span> */}
-                <p style={{ fontWeight: 'bold', color: 'blue'}}>{produto.price}</p>
+                {/* <p style={{ fontWeight: 'bold', color: 'blue', background: 'red'}}>{produto.price}</p> */}
               </Card.Text>
-              {/* <Button variant="primary" href={produto.link} target="_blank">Go!</Button> */}
+              <Button variant="primary" href={produto.link} target="_blank">{produto.price}</Button>
             </Card.Body>
           </Card>
           </a>
         )}  
+
+        {/* </div> */}
 
         </Row>
 
